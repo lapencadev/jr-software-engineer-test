@@ -1,0 +1,7 @@
+com\adobe\bookstore\BookStock.class
+com\adobe\bookstore\orderedItem\OrderedItem.class
+com\adobe\bookstore\BookStockRepository.class
+com\adobe\bookstore\order\Order.class
+com\adobe\bookstore\order\OrderRepository.class
+com\adobe\bookstore\BookStockResource.class
+com\adobe\bookstore\BookstoreApplication.class
