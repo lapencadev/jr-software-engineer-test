@@ -11,9 +11,7 @@ import java.util.List;
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
     @Query("SELECT new com.adobe.bookstore.order.dto.OrderDto(" +
-            "o.id, o.orderDate, b.name, oi.quantity, o.status) " +
-            "FROM OrderedItem oi " +
-            "JOIN oi.book b " +
-            "JOIN oi.order o ")
+            "o.id, o.orderDate, o.status) " +
+            "FROM Order o")
     List<OrderDto> getOrders();
 }

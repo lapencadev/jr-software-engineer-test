@@ -27,6 +27,6 @@ public class Order {
     private String status;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore // Evita ciclos infinitos durante la serialización JSON
+    @JsonIgnore
     private List<OrderedItem> orderedItems;
 }

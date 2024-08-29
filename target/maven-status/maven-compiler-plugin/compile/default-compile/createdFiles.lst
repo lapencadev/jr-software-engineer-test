@@ -1,10 +1,12 @@
-com\adobe\bookstore\order\OrderService.class
+com\adobe\bookstore\bookStock\dto\BookDto.class
 com\adobe\bookstore\orderedItem\OrderedItem.class
 com\adobe\bookstore\order\dto\OrderDto.class
-com\adobe\bookstore\bookStock\BookStock.class
-com\adobe\bookstore\order\OrderController.class
 com\adobe\bookstore\order\Order.class
-com\adobe\bookstore\order\OrderRepository.class
 com\adobe\bookstore\bookStock\BookStockResource.class
 com\adobe\bookstore\BookstoreApplication.class
 com\adobe\bookstore\bookStock\BookStockRepository.class
+com\adobe\bookstore\order\OrderService.class
+com\adobe\bookstore\bookStock\BookStock.class
+com\adobe\bookstore\order\OrderController.class
+com\adobe\bookstore\orderedItem\OrderedItemRepository.class
+com\adobe\bookstore\order\OrderRepository.class

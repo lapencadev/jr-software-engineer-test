@@ -25,6 +25,6 @@ public class BookStock {
     private Integer quantity;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore // Evita ciclos infinitos durante la serialización JSON
+    @JsonIgnore
     private List<OrderedItem> orderedItems;
 }
