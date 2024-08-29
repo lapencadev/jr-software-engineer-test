@@ -1,4 +1,9 @@
-C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\BookStockResource.java
-C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\BookStock.java
+C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\order\OrderController.java
+C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\bookStock\BookStock.java
+C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\orderedItem\OrderedItem.java
+C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\bookStock\BookStockRepository.java
 C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\BookstoreApplication.java
-C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\BookStockRepository.java
+C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\order\OrderService.java
+C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\order\Order.java
+C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\order\OrderRepository.java
+C:\Users\raque\repositorios\jr-software-engineer-test\src\main\java\com\adobe\bookstore\bookStock\BookStockResource.java

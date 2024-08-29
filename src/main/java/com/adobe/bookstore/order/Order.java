@@ -1,7 +1,7 @@
 package com.adobe.bookstore.order;
 
 import com.adobe.bookstore.orderedItem.OrderedItem;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,18 +11,14 @@ import java.util.List;
 
 @Entity
 @Table(name = "orders")
-@JsonSerialize
 @Getter
 @Setter
 public class Order {
 
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
-
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<OrderedItem> orderedBooks;
 
     @Column(name = "order_date", nullable = false)
     private LocalDateTime orderDate;
@@ -30,4 +26,7 @@ public class Order {
     @Column(name = "status", nullable = false)
     private String status;
 
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore // Evita ciclos infinitos durante la serialización JSON
+    private List<OrderedItem> orderedItems;
 }
