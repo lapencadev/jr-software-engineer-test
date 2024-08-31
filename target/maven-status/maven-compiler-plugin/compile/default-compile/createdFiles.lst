@@ -1,7 +1,11 @@
 com\adobe\bookstore\bookStock\dto\BookDto.class
 com\adobe\bookstore\orderedItem\OrderedItem.class
 com\adobe\bookstore\order\dto\OrderDto.class
+com\adobe\bookstore\status\Status.class
+com\adobe\bookstore\order\dto\OrderSave$OrderedItemDto.class
+com\adobe\bookstore\order\dto\OrderSave.class
 com\adobe\bookstore\order\Order.class
+com\adobe\bookstore\status\StatusRepository.class
 com\adobe\bookstore\bookStock\BookStockResource.class
 com\adobe\bookstore\BookstoreApplication.class
 com\adobe\bookstore\bookStock\BookStockRepository.class

@@ -11,7 +11,14 @@ import java.util.List;
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
     @Query("SELECT new com.adobe.bookstore.order.dto.OrderDto(" +
-            "o.id, o.orderDate, o.status) " +
-            "FROM Order o")
+            "o.id, " +
+            "o.orderCode, " +
+            "o.orderDate, " +
+            "o.status.id) " +
+            "FROM Order o " +
+            "order by id asc")
     List<OrderDto> getOrders();
+
+    @Query("SELECT MAX(o.orderCode) FROM Order o")
+    String findMaxOrderCode();
 }
