@@ -20,7 +20,10 @@ class BookStockResourceTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    @Sql(statements = "INSERT INTO book_stock (id, name, quantity) VALUES ('12345-67890', 'some book', 7)")
+    @Sql(statements = "INSERT INTO book_stock (id, name, quantity) VALUES ('12345-67890', 'some book', 7)",
+            executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
+    @Sql(statements = "DELETE FROM book_stock WHERE id = '12345-67890'",
+            executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
     public void shouldReturnCurrentStock() {
         var result = restTemplate.getForObject("http://localhost:" + port + "/books_stock/12345-67890", BookStock.class);
 
