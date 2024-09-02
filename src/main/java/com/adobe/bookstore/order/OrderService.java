@@ -10,6 +10,7 @@ import com.adobe.bookstore.orderedItem.OrderedItemRepository;
 import com.adobe.bookstore.status.Status;
 import com.adobe.bookstore.status.StatusRepository;
 import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Slf4j
 public class OrderService {
 
     @Autowired
@@ -69,8 +71,12 @@ public class OrderService {
 
                         order.getOrderedItems().add(item);
 
-                        bookStock.setQuantity(bookStock.getQuantity() - itemDTO.getQuantity());
-                        bookStockRepository.save(bookStock);
+                        try {
+                            bookStock.setQuantity(bookStock.getQuantity() - itemDTO.getQuantity());
+                            bookStockRepository.save(bookStock);
+                        } catch (Exception e) {
+                            log.warn("An error occurred while updating the stock of book {}: {}", itemDTO.getBookId(), e.getMessage());
+                        }
                     } else {
                         throw new RuntimeException("Book ID is missing in ordered item");
                     }
@@ -96,7 +102,6 @@ public class OrderService {
             }
             catch (NumberFormatException e) {
                 System.out.println("Not valid code: " + e.getMessage());
-
             }
         }
         orderCode = 'P' + String.format("%07d", sequence);

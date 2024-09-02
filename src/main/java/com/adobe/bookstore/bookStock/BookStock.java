@@ -28,7 +28,6 @@ public class BookStock {
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
 
-    //One book associated to many ordered items
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<OrderedItem> orderedItems;
