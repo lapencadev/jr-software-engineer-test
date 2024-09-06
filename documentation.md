@@ -5,8 +5,30 @@ Documentation of the process
 ### Repository setup
 * First of all, I forked the repository in GitHub and I cloned it to the local environment.
 ### DDBB
+The project uses a PostgreSQL database for data storage and testing. Please follow these steps to set up the PostgreSQL database:
 * I added the dependency needed in order to connect the database with PostgreSQL.
-* Configuration of the application.properties file with PostgreSQL connection settings.
+1. Install PostgreSQL: If PostgreSQL is not installed on your machine, you can download and install it from the official website:
+  https://www.postgresql.org/download/. I installed version 15.7. Username and postgres will be "postgres".
+2. Once PgAdmin is installed, you will find one server. We have to register a new server.
+   * In "Quick links" > Add new server:
+     * Name: local
+     * Host name/address: localhost
+     * Port: 5432 (by default)
+     * Maintenance database: postgres
+     * Username: postgres
+     * Password: postgres
+3. Create a Database: Right clik on "Databases" and create a new one named "bookstore". Owner will be postgres by default.
+4. Create the new schema "bookstore": in our new bookstore database, we have "schemas", so create a new one called "bookstore".
+5. application.properties file is already updated with the neccessary information:
+   * spring.datasource.url=jdbc:postgresql://localhost:5432/bookstore?currentSchema=bookstore 
+   * spring.datasource.username=postgres 
+   * spring.datasource.password=postgres
+
+6. The first time we run the project, we have to set up this property from application.properties as follows:
+spring.jpa.hibernate.ddl-auto=create. In order to avoid the creation of the database each time we run the project, you can change "create" for "none".
+7. Once the project is running, you can access to the swagger URL and create new orders: http://localhost:8080/swagger-ui/index.html#/order-controller/createOrder
+
+#### import.sql filed is updated with some example data to see orders.
 
 ## New entities
 To effectively manage orders, several new entities were created:
