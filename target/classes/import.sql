@@ -79,3 +79,19 @@ INSERT INTO book_stock VALUES ('f09387f4-0ec5-4ff4-bc64-3b4bf6108aa1', 'enim in 
 INSERT INTO book_stock VALUES ('92259b63-2440-4782-9855-25d359d75590', 'do laboris Lorem irure mollit', 1);
 INSERT INTO book_stock VALUES ('7916a830-0e9b-4aab-8982-f55d76c6a156', 'et eu magna id excepteur', 4);
 
+-- Values for status
+INSERT INTO bookstore.status VALUES (1, 'REGISTERED')
+INSERT INTO bookstore.status VALUES (2, 'PAID')
+INSERT INTO bookstore.status VALUES (3, 'PROCESSED')
+INSERT INTO bookstore.status VALUES (4, 'SHIPPED')
+INSERT INTO bookstore.status VALUES (5, 'DELIVERED')
+INSERT INTO bookstore.status VALUES (6, 'RETURNED')
+INSERT INTO bookstore.status VALUES (7, 'CANCELLED')
+
+-- Values for orders
+INSERT INTO bookstore.orders VALUES (1, 'P0000001', '2024-08-28 12:45:00', 1);
+INSERT INTO bookstore.orders VALUES (2, 'P0000002', '2024-08-29 13:54:56', 1);
+
+-- Values for ordered items
+INSERT INTO bookstore.ordered_item VALUES (1, 1, '22d580fc-d02e-4f70-9980-f9693c18f6e0', 1)
+INSERT INTO bookstore.ordered_item VALUES (2, 2,'58716995-b335-4bb0-89c1-3503bc003118', 2)
